@@ -1,6 +1,6 @@
 # DevProject Generator
 
-![Live Demo](https://dev-generator.netlify.app/)
+[Live Demo](https://dev-generator.netlify.app/)
 
 DevProject Generator is a web application designed to help junior frontend developers discover and create personalized portfolio projects aligned with their skills and career goals. The platform leverages AI to generate tailored project ideas that showcase a developer's abilities and increase their employability in the tech industry.
 
