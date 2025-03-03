@@ -1,4 +1,4 @@
-# DevProject Generator
+# 👨‍💻 DevProject Generator
 
 [Live Demo](https://dev-generator.netlify.app/)
 
