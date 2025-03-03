@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "Space Grotesk", sans-serif;
+  --font-secondary: "Work Sans", sans-serif;
+
+  --color-primary: #111827;
+  --color-secondary: #8b5cf6;
+}
+
+/* Hide scrollbar */
+
+::-webkit-scrollbar {
+  display: none;
+}
