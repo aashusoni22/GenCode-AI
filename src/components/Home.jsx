@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="bg-black min-h-screen">
       {/* Hero Section with Animation */}
-      <section className="max-w-7xl mx-auto text-white py-20 pt-36 px-6 md:px-16 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      <section className="max-w-7xl mx-auto text-white py-20 pt-28 px-6 md:px-16 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <div className="font-primary animate-fadeIn">
           <span className="inline-block bg-[#3B3363] bg-opacity-30 text-[#8B5CF6] px-4 py-1 rounded-full text-sm font-medium mb-4">
             For Junior Developers
@@ -199,7 +199,7 @@ const Home = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Stat 1 */}
-          <div className="bg-primary p-8 rounded-lg text-center border border-[#3B3363] border-opacity-20 hover:border-opacity-50 transition-all duration-300 hover:transform hover:-translate-y-1 transition-transform duration-300">
+          <div className="bg-primary p-8 rounded-lg text-center border border-[#3B3363] border-opacity-20 hover:border-opacity-50 hover:transform hover:-translate-y-1 transition-transform duration-300">
             <p className="text-6xl font-primary font-bold text-[#8B5CF6] mb-4">
               86<span className="text-3xl">%</span>
             </p>
@@ -213,7 +213,7 @@ const Home = () => {
           </div>
 
           {/* Stat 2 */}
-          <div className="bg-primary p-8 rounded-lg text-center border border-[#3B3363] border-opacity-20 hover:border-opacity-50 transition-all duration-300 hover:transform hover:-translate-y-1 transition-transform duration-300">
+          <div className="bg-primary p-8 rounded-lg text-center border border-[#3B3363] border-opacity-20 hover:border-opacity-50 transition-all">
             <p className="text-6xl font-primary font-bold text-[#8B5CF6] mb-4">
               3<span className="text-3xl">x</span>
             </p>
@@ -226,7 +226,7 @@ const Home = () => {
           </div>
 
           {/* Stat 3 */}
-          <div className="bg-primary p-8 rounded-lg text-center border border-[#3B3363] border-opacity-20 hover:border-opacity-50 transition-all duration-300 hover:transform hover:-translate-y-1 transition-transform duration-300">
+          <div className="bg-primary p-8 rounded-lg text-center border border-[#3B3363] border-opacity-20 hover:border-opacity-50 hover:transform hover:-translate-y-1 transition-transform duration-300">
             <p className="text-6xl font-primary font-bold text-[#8B5CF6] mb-4">
               72<span className="text-3xl">%</span>
             </p>
