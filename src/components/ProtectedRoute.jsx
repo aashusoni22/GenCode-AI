@@ -2,7 +2,7 @@ import React from "react";
 import { useAuthContext } from "../context/AuthContext";
 import { Navigate, useLocation } from "react-router-dom";
 
-const AuthRedirectRoute = ({ children }) => {
+const AuthRedirectRoute = ({ children, authentication = true }) => {
   const { isLoggedIn, loading } = useAuthContext();
   const location = useLocation();
 
@@ -17,9 +17,10 @@ const AuthRedirectRoute = ({ children }) => {
     );
   }
 
-  if (isLoggedIn) {
-    const from = location.state?.from?.pathname || "/generate";
-    return <Navigate to={from} replace />;
+  if (authentication && !isLoggedIn) {
+    return <Navigate to="/login" replace />;
+  } else if (!authentication && isLoggedIn) {
+    return <Navigate to="/" replace />;
   }
 
   return children;

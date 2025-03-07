@@ -26,12 +26,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HomePage />,
+        element: (
+          <ProtectedRoute authentication={false}>
+            <HomePage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/generate",
         element: (
-          <ProtectedRoute>
+          <ProtectedRoute authentication={false}>
             <GeneratePage />
           </ProtectedRoute>
         ),
@@ -39,22 +43,34 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: (
-          <ProtectedRoute>
+          <ProtectedRoute authentication>
             <ProfilePage />
           </ProtectedRoute>
         ),
       },
       {
         path: "/about",
-        element: <AboutPage />,
+        element: (
+          <ProtectedRoute authentication={false}>
+            <AboutPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/resources",
-        element: <ResourcesPage />,
+        element: (
+          <ProtectedRoute authentication={false}>
+            <ResourcesPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/pricing",
-        element: <PricingPage />,
+        element: (
+          <ProtectedRoute authentication={false}>
+            <PricingPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/jobs",
