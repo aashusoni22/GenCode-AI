@@ -1,6 +1,4 @@
-const RAPID_API_KEY =
-  import.meta.env.VITE_APPWRITE_RAPIDAPI_KEY ||
-  "36d044061bmsh6f74adacd7eabc6p155837jsn9e95b2baba22";
+const RAPID_API_KEY = import.meta.env.VITE_APPWRITE_RAPIDAPI_KEY;
 const RAPID_API_HOST = "jsearch.p.rapidapi.com";
 
 // Base options for API requests
