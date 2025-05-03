@@ -1,8 +1,8 @@
-# 👨‍💻 DevProject Generator
+# 👨‍💻 GenCode-AI
 
 [Live Demo](https://dev-generator.netlify.app/)
 
-DevProject Generator is a web application designed to help junior frontend developers discover and create personalized portfolio projects aligned with their skills and career goals. The platform leverages AI to generate tailored project ideas that showcase a developer's abilities and increase their employability in the tech industry.
+GenCode-AI is a web application designed to help junior frontend developers discover and create personalized portfolio projects aligned with their skills and career goals. The platform leverages AI to generate tailored project ideas that showcase a developer's abilities and increase their employability in the tech industry.
 
 ![Screenshot 2025-03-03 143448](https://github.com/user-attachments/assets/1bedcd6b-4ec9-4e2d-a169-7a45cfd5c67e)
 
@@ -41,8 +41,8 @@ DevProject Generator is a web application designed to help junior frontend devel
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/devproject-generator.git
-cd devproject-generator
+git clone https://github.com/aashusoni22/gencodeai.git
+cd -generator
 ```
 
 2. Install dependencies:
@@ -86,7 +86,7 @@ npm start
 ## Project Structure
 
 ```
-devproject-generator/
+gencodeai/
 ├── public/
 ├── src/
 │   ├── assets/
