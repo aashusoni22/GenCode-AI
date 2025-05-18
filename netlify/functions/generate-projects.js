@@ -5,11 +5,28 @@ const openai = new OpenAI({
 });
 
 export const handler = async (event, context) => {
+  // Handle CORS preflight requests
+  if (event.httpMethod === "OPTIONS") {
+    return {
+      statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+      },
+      body: "",
+    };
+  }
+
   // Only allow POST
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,
-      body: "Method Not Allowed",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ error: "Method Not Allowed" }),
     };
   }
 
@@ -33,6 +50,10 @@ export const handler = async (event, context) => {
     ) {
       return {
         statusCode: 400,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ error: "Missing required parameters" }),
       };
     }
@@ -101,10 +122,8 @@ Return the response in valid JSON format as an array of project objects.`;
     return {
       statusCode: 200,
       headers: {
-        "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "POST",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ projects }),
     };
@@ -112,7 +131,14 @@ Return the response in valid JSON format as an array of project objects.`;
     console.error("Error:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: "Failed to generate project" }),
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        error: "Failed to generate project",
+        details: error.message,
+      }),
     };
   }
 };
