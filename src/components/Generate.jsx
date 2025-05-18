@@ -13,9 +13,7 @@ import {
 } from "lucide-react";
 import ProjectResults from "./ProjectResults";
 
-const API_URL = import.meta.env.PROD
-  ? "/.netlify/functions/generate-projects"
-  : "http://localhost:3001/api/generate-projects";
+const API_URL = "/api/generate-projects";
 
 const Generate = () => {
   const [loading, setLoading] = useState(false);
@@ -199,7 +197,19 @@ const Generate = () => {
       .catch((error) => {
         console.error("Error generating projects:", error);
         setLoading(false);
-        alert(`Failed to generate projects: ${error.message}`);
+        try {
+          // Try to parse error response
+          if (error.response) {
+            error.response.text().then((text) => {
+              console.error("Error response:", text);
+              alert(`Failed to generate projects: ${text}`);
+            });
+          } else {
+            alert(`Failed to generate projects: ${error.message}`);
+          }
+        } catch (e) {
+          alert(`Failed to generate projects: ${error.message}`);
+        }
       });
   };
 
