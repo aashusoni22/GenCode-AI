@@ -14,7 +14,7 @@ import {
 import ProjectResults from "./ProjectResults";
 
 const API_URL = import.meta.env.PROD
-  ? "/api/generate-projects"
+  ? "/.netlify/functions/generate-projects"
   : "http://localhost:3001/api/generate-projects";
 
 const Generate = () => {
