@@ -13,6 +13,10 @@ import {
 } from "lucide-react";
 import ProjectResults from "./ProjectResults";
 
+const API_URL = import.meta.env.PROD
+  ? "/.netlify/functions/generate-projects"
+  : "http://localhost:3001/api/generate-projects";
+
 const Generate = () => {
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -162,7 +166,7 @@ const Generate = () => {
       timeCommitment: formData.timeCommitment,
     };
 
-    fetch("http://localhost:3001/api/generate-projects", {
+    fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -211,7 +215,7 @@ const Generate = () => {
       timeCommitment: formData.timeCommitment,
     };
 
-    fetch("http://localhost:3001/api/generate-projects", {
+    fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

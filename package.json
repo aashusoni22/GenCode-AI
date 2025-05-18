@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run copy-helpers",
+    "copy-helpers": "powershell Copy-Item -Path 'src/api/generate-projects.js' -Destination 'netlify/functions/helpers.js'",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node server.js",
-    "start": "node functions/server.js"
+    "server": "node server.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
@@ -22,7 +22,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
-    "tailwindcss": "^4.0.9"
+    "tailwindcss": "^4.0.9",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

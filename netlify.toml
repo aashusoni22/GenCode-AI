@@ -3,5 +3,9 @@
   publish = "dist"
 
 [functions]
-  directory = "functions"
-  server = "server.js"
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
