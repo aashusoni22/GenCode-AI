@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run copy-helpers",
-    "copy-helpers": "powershell Copy-Item -Path 'src/api/generate-projects.js' -Destination 'netlify/functions/helpers.js'",
+    "copy-helpers": "cp src/api/generate-projects.js netlify/functions/helpers.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "node server.js"
