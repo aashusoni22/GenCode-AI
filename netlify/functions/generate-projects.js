@@ -1,10 +1,10 @@
-import { OpenAI } from "openai";
+const { OpenAI } = require("openai");
 
 const openai = new OpenAI({
   apiKey: process.env.VITE_OPENAI_API_KEY,
 });
 
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
   console.log("Function started");
   console.log("Environment variables:", {
     hasApiKey: !!process.env.VITE_OPENAI_API_KEY,
@@ -39,6 +39,9 @@ export const handler = async (event, context) => {
 
   try {
     console.log("Parsing request body");
+    const body = JSON.parse(event.body);
+    console.log("Request body:", body);
+
     const {
       skills,
       experience,
@@ -46,15 +49,7 @@ export const handler = async (event, context) => {
       projectType,
       industry,
       timeCommitment,
-    } = JSON.parse(event.body);
-    console.log("Request body:", {
-      skills,
-      experience,
-      complexity,
-      projectType,
-      industry,
-      timeCommitment,
-    });
+    } = body;
 
     // Validate required fields
     if (
@@ -78,6 +73,21 @@ export const handler = async (event, context) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ error: "Missing required parameters" }),
+      };
+    }
+
+    if (!process.env.VITE_OPENAI_API_KEY) {
+      console.error("OpenAI API key is missing");
+      return {
+        statusCode: 500,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          error: "Server configuration error",
+          details: "OpenAI API key is not configured",
+        }),
       };
     }
 
