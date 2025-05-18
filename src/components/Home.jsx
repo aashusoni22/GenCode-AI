@@ -370,7 +370,7 @@ const Home = () => {
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
               Join hundreds of developers who have found their perfect portfolio
-              projects with GenCode-AI Generator.
+              projects with GenCode-AI.
             </p>
             <Link
               to="/generate"
@@ -410,8 +410,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-500 mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} GenCode-AI Generator. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} GenCode-AI. All rights reserved.
             </div>
             <div className="flex gap-6">
               <a

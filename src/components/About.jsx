@@ -7,7 +7,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto text-white pt-28 pb-8 px-6 md:px-16">
         <h1 className="text-5xl font-primary font-bold leading-tight">
-          About <span className="text-[#8B5CF6]">GenCode-AI Generator</span>
+          About <span className="text-[#8B5CF6]">GenCode-AI</span>
         </h1>
         <p className="mt-4 text-lg text-gray-400 font-secondary max-w-3xl">
           Helping junior developers build impressive portfolios that land jobs.
@@ -22,9 +22,8 @@ const About = () => {
           </h2>
           <p className="text-gray-400 font-secondary text-lg leading-relaxed mb-6">
             We believe that every developer deserves the chance to showcase
-            their skills effectively. GenCode-AI Generator was built to bridge
-            the gap between learning to code and landing that first developer
-            job.
+            their skills effectively. GenCode-AI was built to bridge the gap
+            between learning to code and landing that first developer job.
           </p>
           <p className="text-gray-400 font-secondary text-lg leading-relaxed">
             By providing personalized, industry-relevant project ideas, we help
@@ -88,11 +87,10 @@ const About = () => {
               Our Solution
             </h3>
             <p className="text-gray-400 font-secondary">
-              GenCode-AI Generator leverages AI to create personalized,
-              industry-relevant project ideas based on your skills, experience
-              level, and career goals. Each project comes with detailed
-              specifications and guidance to help you build something truly
-              impressive.
+              GenCode-AI leverages AI to create personalized, industry-relevant
+              project ideas based on your skills, experience level, and career
+              goals. Each project comes with detailed specifications and
+              guidance to help you build something truly impressive.
             </p>
           </div>
         </div>
@@ -115,11 +113,11 @@ const About = () => {
               Frontend Developer
             </p>
             <p className="text-gray-400 font-secondary max-w-2xl">
-              As a passionate frontend developer, I created GenCode-AI Generator
-              to solve the problem I faced when building my own portfolio. With
-              a background in UI/UX design and a love for creating helpful
-              tools, I'm on a mission to help other junior developers showcase
-              their talents and land their dream jobs.
+              As a passionate frontend developer, I created GenCode-AI to solve
+              the problem I faced when building my own portfolio. With a
+              background in UI/UX design and a love for creating helpful tools,
+              I'm on a mission to help other junior developers showcase their
+              talents and land their dream jobs.
             </p>
           </div>
         </div>

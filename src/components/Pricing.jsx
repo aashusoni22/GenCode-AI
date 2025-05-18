@@ -12,7 +12,7 @@ const Pricing = () => {
   const plans = [
     {
       name: "Free",
-      description: "Perfect for trying out GenCode-AI Generator",
+      description: "Perfect for trying out GenCode-AI",
       price: 0,
       features: [
         "Generate up to 20 projects",
