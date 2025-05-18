@@ -177,7 +177,7 @@ const Generate = () => {
         if (!response.ok) {
           return response.json().then((err) => {
             console.error("Error details:", err);
-            throw new Error("Network response was not ok");
+            throw new Error(err.error || "Network response was not ok");
           });
         }
         return response.json();
@@ -199,7 +199,7 @@ const Generate = () => {
       .catch((error) => {
         console.error("Error generating projects:", error);
         setLoading(false);
-        alert("Failed to generate projects. Please try again.");
+        alert(`Failed to generate projects: ${error.message}`);
       });
   };
 
@@ -226,7 +226,7 @@ const Generate = () => {
         if (!response.ok) {
           return response.json().then((err) => {
             console.error("Error details:", err);
-            throw new Error("Network response was not ok");
+            throw new Error(err.error || "Network response was not ok");
           });
         }
         return response.json();
@@ -246,7 +246,7 @@ const Generate = () => {
       })
       .catch((error) => {
         console.error("Error regenerating projects:", error);
-        alert("Failed to regenerate projects. Please try again.");
+        alert(`Failed to regenerate projects: ${error.message}`);
         return { success: false };
       })
       .finally(() => setLoading(false));

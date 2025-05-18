@@ -5,6 +5,12 @@ const openai = new OpenAI({
 });
 
 export const handler = async (event, context) => {
+  console.log("Function started");
+  console.log("Environment variables:", {
+    hasApiKey: !!process.env.VITE_OPENAI_API_KEY,
+    apiKeyLength: process.env.VITE_OPENAI_API_KEY?.length,
+  });
+
   // Handle CORS preflight requests
   if (event.httpMethod === "OPTIONS") {
     return {
@@ -20,6 +26,7 @@ export const handler = async (event, context) => {
 
   // Only allow POST
   if (event.httpMethod !== "POST") {
+    console.log("Method not allowed:", event.httpMethod);
     return {
       statusCode: 405,
       headers: {
@@ -31,6 +38,7 @@ export const handler = async (event, context) => {
   }
 
   try {
+    console.log("Parsing request body");
     const {
       skills,
       experience,
@@ -39,6 +47,14 @@ export const handler = async (event, context) => {
       industry,
       timeCommitment,
     } = JSON.parse(event.body);
+    console.log("Request body:", {
+      skills,
+      experience,
+      complexity,
+      projectType,
+      industry,
+      timeCommitment,
+    });
 
     // Validate required fields
     if (
@@ -48,6 +64,13 @@ export const handler = async (event, context) => {
       !projectType ||
       !timeCommitment
     ) {
+      console.log("Missing required parameters:", {
+        hasSkills: !!skills,
+        skillsLength: skills?.length,
+        complexity,
+        projectType,
+        timeCommitment,
+      });
       return {
         statusCode: 400,
         headers: {
@@ -60,6 +83,16 @@ export const handler = async (event, context) => {
 
     const experienceLevel = getExperienceLevel(experience);
     const timeEstimate = getTimeEstimate(timeCommitment);
+
+    console.log("Creating prompt with:", {
+      experienceLevel,
+      timeEstimate,
+      skills,
+      complexity,
+      projectType,
+      industry,
+      timeCommitment,
+    });
 
     const prompt = `Generate 4 detailed project ideas for a ${experienceLevel}-level frontend developer with the following specifications:
 
@@ -88,6 +121,7 @@ FOR EACH PROJECT, INCLUDE:
 
 Return the response in valid JSON format as an array of project objects.`;
 
+    console.log("Calling OpenAI API");
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages: [
@@ -105,11 +139,14 @@ Return the response in valid JSON format as an array of project objects.`;
       max_tokens: 2500,
     });
 
+    console.log("OpenAI API response received");
     let projects;
     try {
       projects = JSON.parse(completion.choices[0].message.content);
+      console.log("Successfully parsed OpenAI response");
     } catch (parseError) {
       console.error("Failed to parse OpenAI response:", parseError);
+      console.log("Raw response:", completion.choices[0].message.content);
       projects = createDefaultProjects(skills);
     }
 
@@ -119,6 +156,7 @@ Return the response in valid JSON format as an array of project objects.`;
       ...project,
     }));
 
+    console.log("Returning successful response");
     return {
       statusCode: 200,
       headers: {
@@ -128,7 +166,7 @@ Return the response in valid JSON format as an array of project objects.`;
       body: JSON.stringify({ projects }),
     };
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Error in function:", error);
     return {
       statusCode: 500,
       headers: {
@@ -138,6 +176,7 @@ Return the response in valid JSON format as an array of project objects.`;
       body: JSON.stringify({
         error: "Failed to generate project",
         details: error.message,
+        stack: error.stack,
       }),
     };
   }
