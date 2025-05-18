@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "node server.js",
+    "start": "node functions/server.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.9",
@@ -32,6 +34,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "netlify-cli": "^21.4.2",
     "vite": "^6.2.0"
   }
 }

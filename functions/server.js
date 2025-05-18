@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import cors from "cors";
 import express from "express";
-import generateProjectsRouter from "./src/api/generate-projects.js";
+import generateProjectsRouter from "../src/api/generate-projects.js";
 
 // Load environment variables
 
