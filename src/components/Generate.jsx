@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import ProjectResults from "./ProjectResults";
 
-const API_URL = "/api/generate-projects";
+const API_URL = "https://gen-code-ai.vercel.app/api/generate-projects";
 
 const Generate = () => {
   const [loading, setLoading] = useState(false);

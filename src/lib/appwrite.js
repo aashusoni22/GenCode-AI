@@ -10,12 +10,6 @@ const usersCollectionId = import.meta.env.VITE_APPWRITE_USER_COLLECTION_ID;
 const client = new Client();
 client.setEndpoint(endpoint).setProject(projectId);
 
-// Configure CORS for production
-const isProd = window.location.hostname !== "localhost";
-if (isProd) {
-  client.setSelfSigned(false); // Ensure SSL verification in production
-}
-
 const account = new Account(client);
 const databases = new Databases(client);
 
