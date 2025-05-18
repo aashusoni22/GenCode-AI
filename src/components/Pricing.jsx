@@ -12,7 +12,7 @@ const Pricing = () => {
   const plans = [
     {
       name: "Free",
-      description: "Perfect for trying out DevProject Generator",
+      description: "Perfect for trying out GenCode-AI Generator",
       price: 0,
       features: [
         "Generate up to 20 projects",
@@ -65,7 +65,7 @@ const Pricing = () => {
             Choose Your <span className="text-secondary">Plan</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Generate the perfect projects for your portfolio with DevProject
+            Generate the perfect projects for your portfolio with GenCode-AI
             Generator
           </p>
         </div>
@@ -253,10 +253,10 @@ const Pricing = () => {
           <p className="text-gray-500 text-sm">
             Need help choosing a plan? Contact us at{" "}
             <a
-              href="mailto:support@devprojectgen.com"
+              href="mailto:support@GenCode-AIgen.com"
               className="text-purple-400 hover:text-purple-300"
             >
-              support@devprojectgen.com
+              support@GenCode-AIgen.com
             </a>
           </p>
         </div>

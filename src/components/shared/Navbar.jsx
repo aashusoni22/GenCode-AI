@@ -65,10 +65,10 @@ const Navbar = () => {
             </div>
             <div className="relative ml-2">
               <h1 className="text-white text-xl md:text-2xl font-bold group-hover:opacity-0 transition-opacity duration-300">
-                DevProject
+                GenCode-AI
               </h1>
               <h1 className="text-transparent bg-clip-text bg-secondary text-xl md:text-2xl font-bold absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                DevProject
+                GenCode-AI
               </h1>
             </div>
           </Link>

@@ -290,7 +290,7 @@ const Home = () => {
               </div>
             </div>
             <p className="font-secondary text-gray-400 text-lg italic">
-              "Thanks to DevProject, I built an e-commerce dashboard that
+              "Thanks to GenCode-AI, I built an e-commerce dashboard that
               showcased my React skills. I landed three interviews in my first
               week!"
             </p>
@@ -338,7 +338,7 @@ const Home = () => {
               </div>
             </div>
             <p className="font-secondary text-gray-400 text-lg italic">
-              "As a career-switcher, I had no idea what to build. DevProject
+              "As a career-switcher, I had no idea what to build. GenCode-AI
               gave me projects that actually impressed senior developers in
               interviews."
             </p>
@@ -370,7 +370,7 @@ const Home = () => {
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
               Join hundreds of developers who have found their perfect portfolio
-              projects with DevProject Generator.
+              projects with GenCode-AI Generator.
             </p>
             <Link
               to="/generate"
@@ -410,7 +410,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-gray-500 mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} DevProject Generator. All rights
+              &copy; {new Date().getFullYear()} GenCode-AI Generator. All rights
               reserved.
             </div>
             <div className="flex gap-6">
